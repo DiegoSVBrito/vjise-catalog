@@ -319,7 +319,16 @@ const PLACES = [
     desc:{pt:"Cervejaria artesanal no mesmo prédio do Bob's, na BR-070. Chopes e cervejas especiais, petiscos e happy hour.",
           en:"Craft brewery in the same building as Bob's, on BR-070 highway. Draft and specialty beers, bar snacks and happy hour.",
           es:"Cervecería artesanal en el mismo edificio que Bob's, en la BR-070. Cervezas artesanales, aperitivos y happy hour."},
-    hours:null }
+    hours:null },
+
+  { id:"misturella", icon:"🥪", cats:["dinner","happy"], lat:-16.0639548, lng:-57.6793385,
+    area:{pt:"Em frente à UNEMAT",en:"Across from UNEMAT",es:"Frente a la UNEMAT"}, rating:null, phone:"+5565984735364",
+    name:"Restaurante e Lanchonete Misturella",
+    desc:{pt:"Em frente à UNEMAT. Lanches, porções e refeições. Ponto prático para quem está no campus.",
+          en:"Across from UNEMAT. Snacks, sharing plates and meals. Convenient spot right by the campus.",
+          es:"Frente a la UNEMAT. Sándwiches, porciones y comidas. Punto práctico junto al campus."},
+    hours:null,
+    customHours:{pt:"Seg–Sáb · 18:00–23:00",en:"Mon–Sat · 6 PM–11 PM",es:"Lun–Sáb · 18:00–23:00"} }
 ];
 
 /* ---------------- I18N ---------------- */
@@ -409,7 +418,7 @@ function groupsFor(){
   if(filter==='happy') return [{title:t.happy, items:PLACES.filter(p=>p.cats.includes('happy'))}];
   return [
     {title:t.g_lunch,  items:byId(['todo-dia','juba','juba-center','dito','kaskata','bobs'])},
-    {title:t.g_dinner, items:byId(['tutu','juba','todo-dia','juba-center','bobs','louvada'])},
+    {title:t.g_dinner, items:byId(['tutu','juba','todo-dia','juba-center','bobs','louvada','misturella'])},
     {title:t.g_river,  items:byId(['kaskata','prosa'])},
     {title:t.g_praca,  items:byId(['praca','dito'])}
   ];
@@ -428,6 +437,8 @@ function card(p){
     const idx=jsDayToIdx();
     const rows=t.days.map((d,i)=>`<span class="d ${i===idx?'today':''}">${d}</span><span class="t ${i===idx?'today':''}">${p.hours[i]}</span>`).join('');
     hoursHtml=`<details class="hours"><summary><span class="caret">▶</span>${t.hours}</summary><div class="hours-grid">${rows}</div></details>`;
+  } else if(p.customHours){
+    hoursHtml=`<p class="desc" style="margin-top:8px;font-size:12.5px;font-weight:600;color:var(--blue)">🕐 ${esc(p.customHours[lang])}</p>`;
   }
   const callBtn = p.phone ? `<a class="btn btn-mini" href="tel:${p.phone}" aria-label="${t.call}">📞</a>` : '';
   return `<article class="card ${p.typical?'typical':''}">
