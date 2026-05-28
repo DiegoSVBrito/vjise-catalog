@@ -303,6 +303,22 @@ const PLACES = [
     desc:{pt:"Região central, tudo a pé: Casarão (jantar em prédio histórico), barzinhos ao ar livre, restaurante japonês/sushi, sorveterias e cinema.",
           en:"Central area, all walkable: Casarão (dinner in a historic building), open-air bars, a Japanese/sushi restaurant, ice-cream shops and a cinema.",
           es:"Zona central, todo a pie: Casarão (cena en edificio histórico), bares al aire libre, restaurante japonés/sushi, heladerías y cine."},
+    hours:null },
+
+  { id:"bobs", icon:"🍔", cats:["lunch","dinner"], lat:-16.0861298, lng:-57.6954854,
+    area:{pt:"São Luiz da Ponte",en:"São Luiz da Ponte",es:"São Luiz da Ponte"}, rating:null, phone:null,
+    name:"Bob's Burguer",
+    desc:{pt:"Hambúrgueres e milk-shakes na BR-070. Fast food com opção leve embora e acessibilidade.",
+          en:"Burgers and milkshakes on BR-070 highway. Fast food with take-away and wheelchair access.",
+          es:"Hamburguesas y batidos en la BR-070. Comida rápida para llevar y con accesibilidad."},
+    hours:["10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00"] },
+
+  { id:"louvada", icon:"🍺", cats:["dinner","happy"], lat:-16.0861298, lng:-57.6954854,
+    area:{pt:"São Luiz da Ponte",en:"São Luiz da Ponte",es:"São Luiz da Ponte"}, rating:null, phone:null,
+    name:"Cervejaria Louvada",
+    desc:{pt:"Cervejaria artesanal no mesmo prédio do Bob's, na BR-070. Chopes e cervejas especiais, petiscos e happy hour.",
+          en:"Craft brewery in the same building as Bob's, on BR-070 highway. Draft and specialty beers, bar snacks and happy hour.",
+          es:"Cervecería artesanal en el mismo edificio que Bob's, en la BR-070. Cervezas artesanales, aperitivos y happy hour."},
     hours:null }
 ];
 
@@ -392,8 +408,8 @@ function groupsFor(){
   if(filter==='dinner') return [{title:t.g_dinner, items:PLACES.filter(p=>p.cats.includes('dinner'))}];
   if(filter==='happy') return [{title:t.happy, items:PLACES.filter(p=>p.cats.includes('happy'))}];
   return [
-    {title:t.g_lunch,  items:byId(['todo-dia','juba','juba-center','dito','kaskata'])},
-    {title:t.g_dinner, items:byId(['tutu','juba','todo-dia','juba-center'])},
+    {title:t.g_lunch,  items:byId(['todo-dia','juba','juba-center','dito','kaskata','bobs'])},
+    {title:t.g_dinner, items:byId(['tutu','juba','todo-dia','juba-center','bobs','louvada'])},
     {title:t.g_river,  items:byId(['kaskata','prosa'])},
     {title:t.g_praca,  items:byId(['praca','dito'])}
   ];
