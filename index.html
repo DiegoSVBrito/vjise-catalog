@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia de Gastronomia · V JISE 2026 · UNEMAT Cáceres/MT</title>
+<meta name="description" content="Guia oficial de restaurantes e happy hour da V JISE 2026 — UNEMAT, Cáceres/MT, com rotas no Google Maps.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<style>
+  :root{
+    /* UNEMAT institutional palette (bandeira de Mato Grosso) */
+    --blue:#003b5c;          /* Pantone 2955 C */
+    --blue-2:#075e86;
+    --green:#1c4c0d;         /* Pantone 349 C */
+    --green-2:#2f6b1a;
+    --yellow:#ffcb05;        /* Pantone 116 C */
+    --yellow-d:#d9aa00;
+    --ink:#231f20;           /* brand black */
+    --bg:#f2f5f4;
+    --bg-2:#e7eeeb;
+    --card:#ffffff;
+    --line:#d8e1de;
+    --muted:#5d6b66;
+    --open:#2f6b1a;
+    --closed:#bb4f37;
+    --shadow:0 7px 24px -14px rgba(0,59,92,.5);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Hanken Grotesk',sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.5;
+    overflow-x:hidden;-webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;
+    background:
+      radial-gradient(820px 360px at 112% -6%, rgba(255,203,5,.10), transparent 60%),
+      radial-gradient(680px 420px at -12% 14%, rgba(28,76,13,.10), transparent 60%);
+  }
+  .wrap{position:relative;z-index:1;max-width:560px;margin:0 auto;padding-bottom:46px}
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;color:#eef4f3;overflow:hidden;
+    background:linear-gradient(150deg,var(--blue) 0%, #064a5f 55%, var(--green) 130%);
+    padding:18px 22px 32px;border-radius:0 0 26px 26px;
+  }
+  /* MT-flag diamond motif */
+  .hero .diamond{position:absolute;width:150px;height:150px;right:-44px;top:-44px;
+    background:linear-gradient(135deg,var(--yellow),var(--yellow-d));transform:rotate(45deg);
+    opacity:.16;border-radius:14px}
+  .hero .diamond.sm{width:80px;height:80px;right:64px;top:78px;opacity:.10;background:var(--green-2)}
+
+  .lockup{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;position:relative;z-index:2}
+  .brand{display:flex;align-items:center;gap:10px;min-width:0}
+  .ulogo{height:34px;width:auto;display:none}
+  .brand-txt{line-height:1.12}
+  .brand-txt b{font-family:'Sora',sans-serif;font-weight:800;font-size:16px;letter-spacing:.04em;color:#fff;display:block}
+  .brand-txt span{font-size:10.5px;color:rgba(238,244,243,.72);letter-spacing:.02em}
+  .lang{display:flex;background:rgba(238,244,243,.12);border:1px solid rgba(238,244,243,.22);border-radius:999px;padding:3px;flex-shrink:0}
+  .lang button{font-family:'Sora',sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.04em;color:rgba(238,244,243,.7);background:transparent;border:0;cursor:pointer;padding:6px 10px;border-radius:999px;transition:.18s}
+  .lang button.on{background:var(--yellow);color:var(--ink)}
+
+  .kicker{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;
+    font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;
+    background:rgba(255,203,5,.16);border:1px solid rgba(255,203,5,.4);color:var(--yellow);
+    padding:6px 12px;border-radius:999px;margin-bottom:14px}
+  h1{position:relative;z-index:2;font-family:'Sora',sans-serif;font-weight:800;
+    font-size:clamp(29px,8vw,40px);line-height:1.05;letter-spacing:-.015em;color:#fff;margin-bottom:9px}
+  h1 .em{color:var(--yellow)}
+  .hero .sub{position:relative;z-index:2;font-size:14.5px;max-width:36ch;color:rgba(238,244,243,.9)}
+  .event{position:relative;z-index:2;margin-top:18px;padding-top:15px;border-top:1px solid rgba(238,244,243,.2)}
+  .event .ev-name{font-family:'Sora',sans-serif;font-weight:600;font-size:13.5px;color:#fff;line-height:1.25}
+  .event .ev-meta{font-size:12px;color:rgba(238,244,243,.78);margin-top:4px;display:flex;flex-wrap:wrap;gap:5px 12px}
+  .event .ev-meta b{color:var(--yellow);font-weight:700}
+  .event .ev-theme{font-size:11.5px;font-style:italic;color:rgba(238,244,243,.7);margin-top:7px}
+  .wave{position:absolute;left:0;right:0;bottom:-2px;height:30px;display:block;z-index:1}
+
+  /* ---------- FILTERS ---------- */
+  .filters{position:sticky;top:0;z-index:20;background:var(--bg);padding:13px 16px 11px;margin-top:4px;
+    display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;border-bottom:1px solid var(--line)}
+  .filters::-webkit-scrollbar{display:none}
+  .chip{font-family:'Sora',sans-serif;font-size:12.5px;font-weight:600;white-space:nowrap;cursor:pointer;
+    background:var(--card);color:var(--blue);border:1.5px solid var(--line);padding:8px 14px;border-radius:999px;transition:.16s;flex-shrink:0}
+  .chip.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+  /* ---------- CARDS ---------- */
+  main{padding:16px 16px 0}
+  .group-title{font-family:'Sora',sans-serif;font-size:13.5px;font-weight:700;letter-spacing:.02em;
+    color:var(--blue);margin:18px 4px 10px;display:flex;align-items:center;gap:9px;text-transform:uppercase}
+  .group-title::after{content:"";flex:1;height:2px;background:linear-gradient(90deg,var(--yellow),transparent);border-radius:2px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 16px 14px;margin-bottom:13px;
+    box-shadow:var(--shadow);position:relative;overflow:hidden;animation:rise .5s cubic-bezier(.2,.7,.3,1) both}
+  .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--blue)}
+  .card.typical::before{background:var(--yellow)}
+  @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .card-top{display:flex;gap:11px;align-items:flex-start}
+  .ico{width:42px;height:42px;flex-shrink:0;border-radius:12px;display:grid;place-items:center;font-size:21px;background:var(--bg-2)}
+  .card.typical .ico{background:rgba(255,203,5,.22)}
+  .name{font-family:'Sora',sans-serif;font-weight:700;font-size:18px;line-height:1.14;letter-spacing:-.01em;color:var(--ink)}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px;align-items:center}
+  .tag{font-size:11.5px;font-weight:600;padding:3px 8px;border-radius:7px;background:var(--bg-2);color:var(--muted)}
+  .tag.area{background:rgba(0,59,92,.08);color:var(--blue)}
+  .tag.typ{background:rgba(255,203,5,.22);color:#8a6d00}
+  .rating{font-size:12px;font-weight:700;color:#8a6d00;display:inline-flex;align-items:center;gap:3px}
+  .status{font-size:11.5px;font-weight:700;display:inline-flex;align-items:center;gap:5px;padding:3px 8px;border-radius:7px}
+  .status .dot{width:7px;height:7px;border-radius:50%}
+  .status.open{background:rgba(47,107,26,.13);color:var(--open)}
+  .status.open .dot{background:var(--open)}
+  .status.closed{background:rgba(187,79,55,.13);color:var(--closed)}
+  .status.closed .dot{background:var(--closed)}
+  .desc{font-size:13.5px;color:#3c4844;margin-top:11px}
+  details.hours{margin-top:10px}
+  details.hours summary{list-style:none;cursor:pointer;font-size:12.5px;font-weight:600;color:var(--blue);display:inline-flex;align-items:center;gap:6px;user-select:none}
+  details.hours summary::-webkit-details-marker{display:none}
+  details.hours summary .caret{transition:.2s;font-size:10px}
+  details.hours[open] summary .caret{transform:rotate(90deg)}
+  .hours-grid{margin-top:9px;display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font-size:12.5px}
+  .hours-grid .d{font-weight:600;color:var(--muted)}
+  .hours-grid .t{color:#3c4844}
+  .hours-grid .today{color:var(--green);font-weight:700}
+  .actions{display:flex;gap:9px;margin-top:14px}
+  .btn{font-family:'Sora',sans-serif;font-weight:700;font-size:14px;text-decoration:none;cursor:pointer;border-radius:12px;
+    padding:12px 14px;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.16s;border:0}
+  .btn-go{flex:1;background:var(--green);color:#fff;box-shadow:0 4px 14px -7px rgba(28,76,13,.8)}
+  .btn-go:active{transform:scale(.98);background:#163e0a}
+  .btn-mini{background:var(--bg-2);color:var(--blue);padding:12px 13px;flex-shrink:0}
+  .btn-mini:active{transform:scale(.96)}
+
+  /* ---------- FOOTER ---------- */
+  .foot{margin:22px 16px 0;padding:18px;background:var(--blue);border-radius:18px;color:#eef4f3;text-align:center;position:relative;overflow:hidden}
+  .foot .diamond{position:absolute;width:90px;height:90px;left:-30px;bottom:-30px;background:var(--green-2);transform:rotate(45deg);opacity:.3;border-radius:10px}
+  .foot p{font-size:13px;color:rgba(238,244,243,.85);margin-bottom:13px;position:relative;z-index:2}
+  .foot a.printlink{position:relative;z-index:2;display:inline-flex;align-items:center;gap:8px;font-family:'Sora',sans-serif;
+    font-weight:700;font-size:14px;text-decoration:none;background:var(--yellow);color:var(--ink);padding:11px 18px;border-radius:11px}
+  .credits{text-align:center;font-size:11px;color:var(--muted);margin-top:18px;padding:0 16px;line-height:1.5}
+
+  /* ---------- PRINT / QR VIEW ---------- */
+  #printView{display:none;padding:18px 16px 40px}
+  #printView.show{display:block}
+  .back{background:none;border:0;font-family:'Sora',sans-serif;font-weight:700;font-size:14px;color:var(--blue);cursor:pointer;display:inline-flex;align-items:center;gap:7px;margin-bottom:6px}
+  .print-actions{display:flex;gap:10px;margin:8px 0 20px}
+  .print-actions .btn-print{background:var(--blue);color:#fff;flex:1}
+  .print-head{text-align:center;margin-bottom:18px}
+  .print-head .kk{font-family:'Sora',sans-serif;font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--green)}
+  .print-head .tt{font-family:'Sora',sans-serif;font-weight:800;font-size:19px;color:var(--blue);margin-top:3px}
+  .master{background:var(--card);border:1.5px solid var(--line);border-radius:18px;padding:22px;text-align:center;margin-bottom:22px;border-top:5px solid var(--yellow)}
+  .master h2{font-family:'Sora',sans-serif;font-weight:700;font-size:19px;margin-bottom:4px;color:var(--blue)}
+  .master .qrbox{display:inline-block;padding:14px;background:#fff;border-radius:14px;margin:14px 0 8px;border:1px solid var(--line)}
+  .master p{font-size:12.5px;color:var(--muted);max-width:30ch;margin:0 auto}
+  .qr-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  .qr-cell{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center;page-break-inside:avoid;border-top:4px solid var(--blue)}
+  .qr-cell .qrbox{background:#fff;padding:9px;border-radius:9px;display:inline-block;margin-bottom:8px}
+  .qr-cell .qn{font-family:'Sora',sans-serif;font-weight:700;font-size:13px;line-height:1.15;color:var(--ink)}
+  .qr-cell .qa{font-size:10.5px;color:var(--muted);margin-top:3px}
+  .qr-cell .qw{font-size:10px;color:var(--green);font-weight:700;margin-top:5px;text-transform:uppercase;letter-spacing:.04em}
+
+  @media (min-width:560px){ .wrap{box-shadow:0 0 60px -30px rgba(0,59,92,.5)} }
+  @media print{
+    body{background:#fff}
+    body::before,.filters,header.hero,main,.foot,.credits,.print-actions,.back{display:none!important}
+    .wrap{max-width:100%}
+    #printView{display:block!important;padding:0}
+    .qr-grid{grid-template-columns:repeat(3,1fr)}
+    .master,.qr-cell{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= MAIN GUIDE ================= -->
+  <div id="appView">
+    <header class="hero">
+      <div class="diamond"></div><div class="diamond sm"></div>
+      <div class="lockup">
+        <div class="brand">
+          <!-- Para usar o logo oficial: salve o PNG branco da UNEMAT ao lado do index.html
+               e troque o src abaixo (ex: src="unemat-branco.png"), depois remova o style display:none -->
+          <img class="ulogo" id="ulogo" src="" alt="UNEMAT">
+          <div class="brand-txt">
+            <b>UNEMAT</b>
+            <span id="b-sub">Câmpus de Cáceres · PPGL</span>
+          </div>
+        </div>
+        <div class="lang" id="lang">
+          <button data-l="pt" class="on">PT</button>
+          <button data-l="en">EN</button>
+          <button data-l="es">ES</button>
+        </div>
+      </div>
+
+      <span class="kicker" id="h-kicker">★ V JISE · 2026</span>
+      <h1 id="h-title">Onde <span class="em">comer</span> em Cáceres</h1>
+      <p class="sub" id="h-sub">Toque em “Como chegar” e o Google Maps traça a rota a partir de onde você está agora.</p>
+
+      <div class="event">
+        <div class="ev-name" id="ev-name">V Jornada Internacional Semântica e Enunciação</div>
+        <div class="ev-meta"><span id="ev-dates"><b>10–12 jun 2026</b> · UNEMAT, Cáceres/MT</span><span id="ev-format">Formato híbrido</span></div>
+        <div class="ev-theme" id="ev-theme">“Sujeito, sentido, política e história na contemporaneidade”</div>
+      </div>
+
+      <svg class="wave" viewBox="0 0 560 30" preserveAspectRatio="none"><path d="M0 18 Q 70 4 140 16 T 280 16 T 420 16 T 560 14 V30 H0 Z" fill="#f2f5f4"/></svg>
+    </header>
+
+    <nav class="filters" id="filters"></nav>
+    <main id="list"></main>
+
+    <div class="foot">
+      <div class="diamond"></div>
+      <p id="f-text">Organizadores: gere e imprima os QR codes para colar nos pontos do evento.</p>
+      <a class="printlink" id="f-print" href="#">🖨️ <span>QR Codes para imprimir</span></a>
+    </div>
+    <p class="credits" id="credits">Guia de Gastronomia &amp; Happy Hour · V JISE 2026 · PPGL/UNEMAT · Câmpus de Cáceres/MT</p>
+  </div>
+
+  <!-- ================= PRINT / QR VIEW ================= -->
+  <div id="printView">
+    <button class="back" id="backBtn">← <span id="p-back">Voltar ao guia</span></button>
+    <div class="print-actions">
+      <button class="btn btn-print" id="doPrint">🖨️ <span id="p-print">Imprimir / Salvar PDF</span></button>
+    </div>
+    <div class="print-head">
+      <div class="kk">V JISE 2026 · UNEMAT Cáceres</div>
+      <div class="tt" id="p-htitle">Guia de Gastronomia</div>
+    </div>
+    <div class="master">
+      <h2 id="p-mtitle">Guia completo</h2>
+      <div class="qrbox" id="masterQR"></div>
+      <p id="p-mcap">Escaneie para abrir o guia completo no seu celular.</p>
+    </div>
+    <div class="qr-grid" id="qrGrid"></div>
+  </div>
+
+</div>
+
+<script>
+/* ---------------- DATA ---------------- */
+const PLACES = [
+  { id:"todo-dia", icon:"🍽️", cats:["lunch","dinner","happy"], lat:-16.0823296, lng:-57.68113, pid:"ChIJR0T559L_mpMRG7ku_N_cA8g",
+    area:{pt:"Santa Izabel",en:"Santa Izabel",es:"Santa Izabel"}, rating:4.4, phone:"+556599901-0110",
+    name:"Restaurante e Pizzaria Todo Dia",
+    desc:{pt:"Buffet variado e climatizado no almoço. À noite, buffet, pizza e porções. Happy hour com petiscos, bebidas e música ao vivo às sextas.",
+          en:"Air-conditioned buffet at lunch. Buffet, pizza and sharing plates at night. Happy hour with snacks, drinks and live music on Fridays.",
+          es:"Bufé variado y climatizado al mediodía. Por la noche, bufé, pizza y porciones. Happy hour con aperitivos, bebidas y música en vivo los viernes."},
+    hours:["11:00–14:00 · 17:30–23:00","11:00–14:00 · 17:30–23:00","11:00–14:00 · 17:30–23:00","11:00–14:00 · 17:30–23:00","11:00–14:00 · 17:30–00:00","11:00–14:30 · 17:30–00:00","11:00–14:30 · 17:30–00:00"] },
+
+  { id:"juba", icon:"🥗", cats:["lunch","dinner"], lat:-16.076498, lng:-57.6875495, pid:"ChIJKaEESYP_mpMRD7iY7ppKk1M",
+    area:{pt:"Centro",en:"Downtown",es:"Centro"}, rating:4.5, phone:"+556599905-5512",
+    name:"Restaurante Juba",
+    desc:{pt:"Buffet variado e climatizado no almoço; pratos à la carte no jantar. Dentro do complexo do Supermercado Juba.",
+          en:"Air-conditioned varied buffet at lunch; à la carte dishes at dinner. Inside the Juba supermarket complex.",
+          es:"Bufé variado y climatizado al mediodía; platos a la carta en la cena. Dentro del complejo del Supermercado Juba."},
+    hours:["07:30–22:00","07:30–22:00","07:30–22:00","07:30–22:00","07:30–22:00","07:30–22:00","07:30–13:00"] },
+
+  { id:"juba-center", icon:"🛍️", cats:["lunch","dinner","happy"], lat:-16.0759969, lng:-57.6873738, pid:"ChIJ4a_PaPv_mpMRGpsZCxVlaAk",
+    area:{pt:"Centro",en:"Downtown",es:"Centro"}, rating:4.6, phone:null,
+    name:"Juba Center",
+    desc:{pt:"Complexo comercial: choperia, hamburgueria, sorveterias, esfiharia, Cacau Show e cinema. Aberto no almoço, jantar e happy hour.",
+          en:"Shopping complex: pub, burgers, ice-cream shops, sfiha, Cacau Show and a cinema. Open for lunch, dinner and happy hour.",
+          es:"Complejo comercial: cervecería, hamburguesería, heladerías, esfiha, Cacau Show y cine. Abierto para almuerzo, cena y happy hour."},
+    hours:["10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","14:00–20:00"] },
+
+  { id:"kaskata", icon:"🐟", cats:["lunch","dinner"], typical:true, lat:-16.0674982, lng:-57.6937447, pid:"ChIJpUNUKp3_mpMRdXVkDkMkgLw",
+    area:{pt:"Orla / Rio Paraguai",en:"River waterfront",es:"Costanera / Río"}, rating:4.4, phone:"+556532232916",
+    name:"Kaskata Restaurante Flutuante",
+    desc:{pt:"Restaurante flutuante sobre o Rio Paraguai. Peixes da região e carne de jacaré — a melhor opção de culinária típica do Pantanal.",
+          en:"Floating restaurant on the Paraguay River. Regional fish and alligator meat — the top pick for typical Pantanal cuisine.",
+          es:"Restaurante flotante sobre el Río Paraguay. Pescados de la región y carne de yacaré — la mejor opción de cocina típica del Pantanal."},
+    hours:["10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00","10:00–22:00"] },
+
+  { id:"prosa", icon:"🍺", cats:["dinner","happy"], lat:-16.0664767, lng:-57.6900601, pid:"ChIJL5nlytL_mpMRfyTAFcrirGg",
+    area:{pt:"Orla / Rio Paraguai",en:"River waterfront",es:"Costanera / Río"}, rating:4.4, phone:"+556599958-8800",
+    name:"Restaurante Prosa na Orla",
+    desc:{pt:"Na Orla do Rio Paraguai. Porções, peixes regionais e chopp, no jantar e no happy hour.",
+          en:"On the Paraguay River waterfront. Sharing plates, regional fish and draft beer, at dinner and happy hour.",
+          es:"En la costanera del Río Paraguay. Porciones, pescados regionales y cerveza tirada, en la cena y el happy hour."},
+    hours:["10:00–15:00","10:00–15:00 · 17:30–23:00","10:00–15:00 · 17:30–23:00","10:00–15:00 · 17:30–23:00","10:00–15:00 · 17:30–23:00","10:00–23:00","10:00–18:00"] },
+
+  { id:"tutu", icon:"🍕", cats:["dinner","happy"], lat:-16.0789852, lng:-57.6777419, pid:"ChIJsesYupn_mpMRprS0KH25qi4",
+    area:{pt:"Monte Verde",en:"Monte Verde",es:"Monte Verde"}, rating:4.6, phone:"+556532234440",
+    name:"Tutu's (Pizzaria Tutu)",
+    desc:{pt:"Pizzas, hambúrgueres e pratos para o jantar. Música ao vivo. Aceita delivery.",
+          en:"Pizzas, burgers and dinner dishes. Live music. Delivery available.",
+          es:"Pizzas, hamburguesas y platos para la cena. Música en vivo. Hace delivery."},
+    hours:["18:00–23:30","18:00–23:30","18:00–23:30","18:00–23:30","18:00–23:30","18:00–23:30","18:00–23:30"] },
+
+  { id:"dito", icon:"🍛", cats:["lunch"], lat:-16.0648527, lng:-57.6881653, pid:"ChIJHQAjaYL_mpMR7OhZTr7fRQ8",
+    area:{pt:"Praça Barão",en:"Praça Barão",es:"Plaza Barão"}, rating:4.2, phone:"+556532241750",
+    name:"Dito Bendito",
+    desc:{pt:"Na Praça Barão. Pratos executivos e cardápio variado no horário do almoço.",
+          en:"On Praça Barão. Set lunch plates and a varied menu at lunchtime.",
+          es:"En la Plaza Barão. Platos ejecutivos y menú variado a la hora del almuerzo."},
+    hours:["10:00–13:30","10:00–13:30","10:00–13:30","10:00–13:30","10:00–13:30","10:00–13:30","10:00–13:30"] },
+
+  { id:"praca", icon:"🏛️", cats:["dinner","happy"], lat:-16.0649915, lng:-57.6863881, pid:"ChIJO0qlrIP_mpMRoER0oBACozo",
+    area:{pt:"Praça Barão",en:"Praça Barão",es:"Plaza Barão"}, rating:null, phone:null,
+    name:"Praça Barão do Rio Branco",
+    desc:{pt:"Região central, tudo a pé: Casarão (jantar em prédio histórico), barzinhos ao ar livre, restaurante japonês/sushi, sorveterias e cinema.",
+          en:"Central area, all walkable: Casarão (dinner in a historic building), open-air bars, a Japanese/sushi restaurant, ice-cream shops and a cinema.",
+          es:"Zona central, todo a pie: Casarão (cena en edificio histórico), bares al aire libre, restaurante japonés/sushi, heladerías y cine."},
+    hours:null }
+];
+
+/* ---------------- I18N ---------------- */
+const T = {
+  pt:{ title:'Onde <span class="em">comer</span> em Cáceres',
+       sub:'Toque em “Como chegar” e o Google Maps traça a rota a partir de onde você está agora.',
+       kicker:'★ V JISE · 2026', bsub:'Câmpus de Cáceres · PPGL',
+       evname:'V Jornada Internacional Semântica e Enunciação',
+       evdates:'<b>10–12 jun 2026</b> · UNEMAT, Cáceres/MT', evformat:'Formato híbrido',
+       evtheme:'“Sujeito, sentido, política e história na contemporaneidade”',
+       all:'Tudo', lunch:'☀️ Almoço', dinner:'🌙 Jantar', happy:'🍻 Happy Hour',
+       g_lunch:'☀️ Para o almoço', g_dinner:'🌙 Jantar & Happy Hour', g_river:'🌊 À beira-rio', g_praca:'🏛️ Na Praça Barão',
+       go:'Como chegar', call:'Ligar', typ:'Culinária típica',
+       hours:'Horários', open:'Aberto agora', closed:'Fechado agora',
+       footer:'Organizadores: gere e imprima os QR codes para colar nos pontos do evento.',
+       printlink:'QR Codes para imprimir', credits:'Guia de Gastronomia &amp; Happy Hour · V JISE 2026 · PPGL/UNEMAT · Câmpus de Cáceres/MT',
+       back:'Voltar ao guia', print:'Imprimir / Salvar PDF', htitle:'Guia de Gastronomia', mtitle:'Guia completo',
+       mcap:'Escaneie para abrir o guia completo no seu celular.', walk:'Rota a pé',
+       days:['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'] },
+  en:{ title:'Where to <span class="em">eat</span> in Cáceres',
+       sub:'Tap “Directions” and Google Maps will route from wherever you are right now.',
+       kicker:'★ V JISE · 2026', bsub:'Cáceres Campus · PPGL',
+       evname:'5th International Symposium on Semantics and Enunciation',
+       evdates:'<b>June 10–12, 2026</b> · UNEMAT, Cáceres, Brazil', evformat:'Hybrid format',
+       evtheme:'“Subject, meaning, politics and history in contemporary times”',
+       all:'All', lunch:'☀️ Lunch', dinner:'🌙 Dinner', happy:'🍻 Happy Hour',
+       g_lunch:'☀️ For lunch', g_dinner:'🌙 Dinner & Happy Hour', g_river:'🌊 By the river', g_praca:'🏛️ On Praça Barão',
+       go:'Directions', call:'Call', typ:'Local cuisine',
+       hours:'Opening hours', open:'Open now', closed:'Closed now',
+       footer:'Organizers: generate and print the QR codes to post around the venue.',
+       printlink:'Printable QR codes', credits:'Food &amp; Happy Hour Guide · V JISE 2026 · PPGL/UNEMAT · Cáceres Campus, Brazil',
+       back:'Back to guide', print:'Print / Save PDF', htitle:'Food Guide', mtitle:'Full guide',
+       mcap:'Scan to open the full guide on your phone.', walk:'Walking route',
+       days:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'] },
+  es:{ title:'Dónde <span class="em">comer</span> en Cáceres',
+       sub:'Toca “Cómo llegar” y Google Maps trazará la ruta desde donde estés ahora.',
+       kicker:'★ V JISE · 2026', bsub:'Campus de Cáceres · PPGL',
+       evname:'V Jornada Internacional de Semántica y Enunciación',
+       evdates:'<b>10–12 jun 2026</b> · UNEMAT, Cáceres/MT', evformat:'Formato híbrido',
+       evtheme:'“Sujeto, sentido, política e historia en la contemporaneidad”',
+       all:'Todo', lunch:'☀️ Almuerzo', dinner:'🌙 Cena', happy:'🍻 Happy Hour',
+       g_lunch:'☀️ Para el almuerzo', g_dinner:'🌙 Cena & Happy Hour', g_river:'🌊 Junto al río', g_praca:'🏛️ En la Plaza Barão',
+       go:'Cómo llegar', call:'Llamar', typ:'Cocina típica',
+       hours:'Horarios', open:'Abierto ahora', closed:'Cerrado ahora',
+       footer:'Organizadores: generen e impriman los códigos QR para pegar en los puntos del evento.',
+       printlink:'Códigos QR para imprimir', credits:'Guía Gastronómica &amp; Happy Hour · V JISE 2026 · PPGL/UNEMAT · Campus de Cáceres/MT',
+       back:'Volver a la guía', print:'Imprimir / Guardar PDF', htitle:'Guía Gastronómica', mtitle:'Guía completa',
+       mcap:'Escanea para abrir la guía completa en tu móvil.', walk:'Ruta a pie',
+       days:['Lun','Mar','Mié','Jue','Vie','Sáb','Dom'] }
+};
+
+/* ---------------- STATE ---------------- */
+let lang = (navigator.language||'pt').slice(0,2);
+if(!T[lang]) lang = 'pt';
+let filter = 'all';
+
+/* ---------------- HELPERS ---------------- */
+function dirUrl(p){
+  return 'https://www.google.com/maps/dir/?api=1'
+       + '&destination=' + p.lat + ',' + p.lng
+       + (p.pid ? '&destination_place_id=' + p.pid : '')
+       + '&travelmode=walking';
+}
+function jsDayToIdx(){ const d=new Date().getDay(); return d===0?6:d-1; }
+function openStatus(p){
+  if(!p.hours) return null;
+  const idx=jsDayToIdx(), today=p.hours[idx];
+  if(!today) return null;
+  const now=new Date(), cur=now.getHours()*60+now.getMinutes();
+  const ranges=today.split('·');
+  for(const r of ranges){
+    const m=r.match(/(\d{1,2}):(\d{2})\s*[–-]\s*(\d{1,2}):(\d{2})/);
+    if(!m) continue;
+    let s=(+m[1])*60+(+m[2]); let e=(+m[3])*60+(+m[4]);
+    if(e<=s) e+=1440;
+    if((cur>=s&&cur<e)||(cur+1440>=s&&cur+1440<e)) return true;
+  }
+  return false;
+}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+/* ---------------- RENDER GUIDE ---------------- */
+function groupsFor(){
+  const t=T[lang];
+  if(filter==='lunch') return [{title:t.g_lunch, items:PLACES.filter(p=>p.cats.includes('lunch'))}];
+  if(filter==='dinner') return [{title:t.g_dinner, items:PLACES.filter(p=>p.cats.includes('dinner'))}];
+  if(filter==='happy') return [{title:t.happy, items:PLACES.filter(p=>p.cats.includes('happy'))}];
+  return [
+    {title:t.g_lunch,  items:byId(['todo-dia','juba','juba-center','dito','kaskata'])},
+    {title:t.g_dinner, items:byId(['tutu','juba','todo-dia','juba-center'])},
+    {title:t.g_river,  items:byId(['kaskata','prosa'])},
+    {title:t.g_praca,  items:byId(['praca','dito'])}
+  ];
+}
+function byId(ids){ return ids.map(id=>PLACES.find(p=>p.id===id)).filter(Boolean); }
+
+function card(p){
+  const t=T[lang];
+  const st=openStatus(p);
+  const status = st===null ? '' :
+    `<span class="status ${st?'open':'closed'}"><span class="dot"></span>${st?t.open:t.closed}</span>`;
+  const rating = p.rating ? `<span class="rating">★ ${p.rating.toFixed(1)}</span>` : '';
+  const typ = p.typical ? `<span class="tag typ">⭐ ${t.typ}</span>` : '';
+  let hoursHtml='';
+  if(p.hours){
+    const idx=jsDayToIdx();
+    const rows=t.days.map((d,i)=>`<span class="d ${i===idx?'today':''}">${d}</span><span class="t ${i===idx?'today':''}">${p.hours[i]}</span>`).join('');
+    hoursHtml=`<details class="hours"><summary><span class="caret">▶</span>${t.hours}</summary><div class="hours-grid">${rows}</div></details>`;
+  }
+  const callBtn = p.phone ? `<a class="btn btn-mini" href="tel:${p.phone}" aria-label="${t.call}">📞</a>` : '';
+  return `<article class="card ${p.typical?'typical':''}">
+    <div class="card-top">
+      <div class="ico">${p.icon}</div>
+      <div style="flex:1;min-width:0">
+        <div class="name">${esc(p.name)}</div>
+        <div class="meta">
+          <span class="tag area">📍 ${esc(p.area[lang])}</span>
+          ${rating}${status}${typ}
+        </div>
+      </div>
+    </div>
+    <p class="desc">${esc(p.desc[lang])}</p>
+    ${hoursHtml}
+    <div class="actions">
+      <a class="btn btn-go" href="${dirUrl(p)}" target="_blank" rel="noopener">🧭 ${t.go}</a>
+      ${callBtn}
+    </div>
+  </article>`;
+}
+
+function render(){
+  const t=T[lang];
+  document.documentElement.lang = lang==='pt'?'pt-BR':lang;
+  document.getElementById('h-title').innerHTML=t.title;
+  document.getElementById('h-sub').textContent=t.sub;
+  document.getElementById('h-kicker').textContent=t.kicker;
+  document.getElementById('b-sub').textContent=t.bsub;
+  document.getElementById('ev-name').textContent=t.evname;
+  document.getElementById('ev-dates').innerHTML=t.evdates;
+  document.getElementById('ev-format').textContent=t.evformat;
+  document.getElementById('ev-theme').textContent=t.evtheme;
+  document.getElementById('f-text').textContent=t.footer;
+  document.querySelector('#f-print span').textContent=t.printlink;
+  document.getElementById('credits').innerHTML=t.credits;
+  document.getElementById('p-back').textContent=t.back;
+  document.getElementById('p-print').textContent=t.print;
+  document.getElementById('p-htitle').textContent=t.htitle;
+  document.getElementById('p-mtitle').textContent=t.mtitle;
+  document.getElementById('p-mcap').textContent=t.mcap;
+
+  const chips=[['all',t.all],['lunch',t.lunch],['dinner',t.dinner],['happy',t.happy]];
+  document.getElementById('filters').innerHTML=chips.map(([k,v])=>
+    `<button class="chip ${filter===k?'on':''}" data-f="${k}">${v}</button>`).join('');
+
+  const groups=groupsFor();
+  let html='';
+  groups.forEach(g=>{
+    if(!g.items.length) return;
+    html+=`<div class="group-title">${g.title}</div>`;
+    html+=g.items.map(card).join('');
+  });
+  document.getElementById('list').innerHTML=html;
+}
+
+/* ---------------- QR / PRINT VIEW ---------------- */
+function makeQR(el,text,size){
+  el.innerHTML='';
+  if(window.QRCode){
+    new QRCode(el,{text,width:size,height:size,colorDark:'#003b5c',colorLight:'#ffffff',correctLevel:QRCode.CorrectLevel.M});
+  }else{
+    el.innerHTML='<a href="'+text+'" style="font-size:11px;word-break:break-all">'+text+'</a>';
+  }
+}
+function buildPrint(){
+  const t=T[lang];
+  makeQR(document.getElementById('masterQR'), location.href, 184);
+  document.getElementById('qrGrid').innerHTML = PLACES.map(p=>
+    `<div class="qr-cell">
+       <div class="qrbox" id="qr-${p.id}"></div>
+       <div class="qn">${esc(p.name)}</div>
+       <div class="qa">📍 ${esc(p.area[lang])}</div>
+       <div class="qw">🧭 ${t.walk}</div>
+     </div>`).join('');
+  PLACES.forEach(p=>makeQR(document.getElementById('qr-'+p.id), dirUrl(p), 132));
+}
+function showPrint(show){
+  document.getElementById('appView').style.display = show?'none':'';
+  document.getElementById('printView').classList.toggle('show',show);
+  if(show) buildPrint();
+  window.scrollTo(0,0);
+}
+
+/* ---------------- EVENTS ---------------- */
+document.getElementById('lang').addEventListener('click',e=>{
+  const b=e.target.closest('button'); if(!b) return;
+  lang=b.dataset.l;
+  document.querySelectorAll('#lang button').forEach(x=>x.classList.toggle('on',x.dataset.l===lang));
+  render();
+  if(document.getElementById('printView').classList.contains('show')) buildPrint();
+});
+document.getElementById('filters').addEventListener('click',e=>{
+  const b=e.target.closest('.chip'); if(!b) return;
+  filter=b.dataset.f; render();
+});
+document.getElementById('f-print').addEventListener('click',e=>{e.preventDefault();showPrint(true);});
+document.getElementById('backBtn').addEventListener('click',()=>showPrint(false));
+document.getElementById('doPrint').addEventListener('click',()=>window.print());
+
+document.querySelectorAll('#lang button').forEach(x=>x.classList.toggle('on',x.dataset.l===lang));
+render();
+</script>
+</body>
+</html>
