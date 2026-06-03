@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -328,7 +328,47 @@ const PLACES = [
           en:"Across from UNEMAT. Snacks, sharing plates and meals. Convenient spot right by the campus.",
           es:"Frente a la UNEMAT. Sándwiches, porciones y comidas. Punto práctico junto al campus."},
     hours:null,
-    customHours:{pt:"Seg–Sáb · 18:00–23:00",en:"Mon–Sat · 6 PM–11 PM",es:"Lun–Sáb · 18:00–23:00"} }
+    customHours:{pt:"Seg–Sáb · 18:00–23:00",en:"Mon–Sat · 6 PM–11 PM",es:"Lun–Sáb · 18:00–23:00"} },
+
+  { id:"dolina", icon:"💧", cats:["tour"], lat:-16.040000, lng:-57.530000,
+    area:{pt:"Zona Rural (MT-343)",en:"Rural area (MT-343)",es:"Zona Rural (MT-343)"}, rating:null, phone:"+556599902-8010",
+    name:"Dolina Água Milagrosa",
+    desc:{pt:"Uma das dolinas mais bonitas do Brasil. Poço profundo cercado por paredões de rocha e vegetação nativa, com águas em tons de azul e verde-esmeralda. Perfeita para flutuação e mergulho. Trilha de 850 m e escadaria com 150+ degraus até o deck. Agendamento prévio obrigatório.",
+          en:"One of Brazil's most beautiful dolines. A deep pool surrounded by rock walls and native vegetation, with blue and emerald-green waters. Perfect for floating and diving. 850 m trail and 150+ steps to the deck. Advance booking required.",
+          es:"Una de las dolinas más hermosas de Brasil. Poza profunda rodeada de paredes de roca y vegetación nativa, con aguas en tonos azul y verde esmeralda. Perfecta para flotación y buceo. Sendero de 850 m y escalera con 150+ escalones hasta el muelle. Reserva previa obligatoria."},
+    customHours:{pt:"Saídas com agendamento: 10h e 14h. Almoço regional às 12h30.",en:"Guided tours by appointment: 10 AM and 2 PM. Regional lunch at 12:30 PM.",es:"Salidas con reserva previa: 10h y 14h. Almuerzo regional a las 12h30."} },
+
+  { id:"jacobina", icon:"🏡", cats:["tour","lunch"], lat:-16.241858, lng:-57.554678,
+    area:{pt:"Zona Rural (BR-070)",en:"Rural area (BR-070)",es:"Zona Rural (BR-070)"}, rating:null, phone:"+556599634-4545",
+    name:"Fazenda Jacobina",
+    desc:{pt:"Casarão histórico tombado, do período colonial e imperial. Turismo rural com arquitetura preservada (senzala e engenhos). Culinária pantaneira no fogão à lenha aos fins de semana.",
+          en:"Listed historic manor from the colonial and imperial period. Rural tourism with preserved architecture (former slave quarters and sugar mills). Pantanal cuisine on wood stove on weekends.",
+          es:"Casona histórica catalogada del período colonial e imperial. Turismo rural con arquitectura preservada (antigua senzala y trapiches). Cocina pantanera en fogón a leña los fines de semana."},
+    hours:[null,null,null,null,null,"11:00–15:00","11:00–15:00"] },
+
+  { id:"ponta-morro", icon:"🏞️", cats:["tour"], lat:-16.140000, lng:-57.540000,
+    area:{pt:"Piraputanga",en:"Piraputanga",es:"Piraputanga"}, rating:null, phone:"+556599979-3623",
+    name:"Balneário Ponta do Morro",
+    desc:{pt:"Refúgio ecológico com piscinas de águas naturais e correntes. Restaurante self-service, pesque-pague, pesque-solte e trilhas na mata.",
+          en:"Ecological retreat with natural spring-water pools. Self-service restaurant, catch-and-release fishing, and forest trails.",
+          es:"Refugio ecológico con piscinas de aguas naturales y corrientes. Restaurante self-service, pesca y senderos en la selva."},
+    hours:[null,null,null,null,null,"09:00–17:00","09:00–17:00"] },
+
+  { id:"catedral", icon:"⛪", cats:["tour"], lat:-16.065433, lng:-57.687539,
+    area:{pt:"Centro Histórico",en:"Historic Downtown",es:"Centro Histórico"}, rating:null, phone:"+556532234443",
+    name:"Catedral de São Luiz de Cáceres",
+    desc:{pt:"Inspirada em Notre-Dame de Paris. Igreja gótico-romana, principal marco histórico, religioso e arquitetônico da cidade. Ponto de parada obrigatória para fotos.",
+          en:"Inspired by Notre-Dame of Paris. Gothic-Roman church, the city's main historical, religious and architectural landmark. A must-see for photos.",
+          es:"Inspirada en Notre-Dame de París. Iglesia gótico-romana, principal hito histórico, religioso y arquitectónico de la ciudad. Parada obligatoria para fotos."},
+    hours:["07:00–19:00","07:00–19:00","07:00–19:00","07:00–19:00","07:00–19:00","07:00–19:00","07:00–19:00"] },
+
+  { id:"daveron", icon:"🏖️", cats:["tour"], lat:-16.061096, lng:-57.689726,
+    area:{pt:"Centro (Orla)",en:"Downtown (Waterfront)",es:"Centro (Costanera)"}, rating:null, phone:null,
+    name:"Praia do Daveron",
+    desc:{pt:"Praia de água doce e areia clara que surge na estiagem do Rio Paraguai (jul–out). Ponto de encontro para esportes, banho e pôr do sol no Pantanal.",
+          en:"Freshwater beach with clear sand that appears during the dry season of the Paraguay River (Jul–Oct). Meeting point for sports, swimming and Pantanal sunsets.",
+          es:"Playa de agua dulce y arena clara que surge durante la sequía del Río Paraguay (jul–oct). Punto de encuentro para deportes, baño y atardeceres en el Pantanal."},
+    customHours:{pt:"Espaço público · Acesso livre 24 h (estrutura de barracas jul–out)",en:"Public space · Open 24 h (beach stalls Jul–Oct)",es:"Espacio público · Acceso libre 24 h (barracas jul–oct)"} }
 ];
 
 /* ---------------- I18N ---------------- */
@@ -339,8 +379,8 @@ const T = {
        evname:'V Jornada Internacional Semântica e Enunciação',
        evdates:'<b>10–12 jun 2026</b> · UNEMAT, Cáceres/MT', evformat:'Formato híbrido',
        evtheme:'“Sujeito, sentido, política e história na contemporaneidade”',
-       all:'Tudo', lunch:'☀️ Almoço', dinner:'🌙 Jantar', happy:'🍻 Happy Hour',
-       g_lunch:'☀️ Para o almoço', g_dinner:'🌙 Jantar & Happy Hour', g_river:'🌊 À beira-rio', g_praca:'🏛️ Na Praça Barão',
+       all:'Tudo', lunch:'☀️ Almoço', dinner:'🌙 Jantar', happy:'🍻 Happy Hour', tour:'🏖️ Turismo',
+       g_lunch:'☀️ Para o almoço', g_dinner:'🌙 Jantar & Happy Hour', g_river:'🌊 À beira-rio', g_praca:'🏛️ Na Praça Barão', g_tour:'🏖️ Pontos Turísticos',
        go:'Como chegar', call:'Ligar', typ:'Culinária típica',
        hours:'Horários', open:'Aberto agora', closed:'Fechado agora',
        footer:'Organizadores: gere e imprima os QR codes para colar nos pontos do evento.',
@@ -354,8 +394,8 @@ const T = {
        evname:'5th International Symposium on Semantics and Enunciation',
        evdates:'<b>June 10–12, 2026</b> · UNEMAT, Cáceres, Brazil', evformat:'Hybrid format',
        evtheme:'“Subject, meaning, politics and history in contemporary times”',
-       all:'All', lunch:'☀️ Lunch', dinner:'🌙 Dinner', happy:'🍻 Happy Hour',
-       g_lunch:'☀️ For lunch', g_dinner:'🌙 Dinner & Happy Hour', g_river:'🌊 By the river', g_praca:'🏛️ On Praça Barão',
+       all:'All', lunch:'☀️ Lunch', dinner:'🌙 Dinner', happy:'🍻 Happy Hour', tour:'🏖️ Tourism',
+       g_lunch:'☀️ For lunch', g_dinner:'🌙 Dinner & Happy Hour', g_river:'🌊 By the river', g_praca:'🏛️ On Praça Barão', g_tour:'🏖️ Tourist Spots',
        go:'Directions', call:'Call', typ:'Local cuisine',
        hours:'Opening hours', open:'Open now', closed:'Closed now',
        footer:'Organizers: generate and print the QR codes to post around the venue.',
@@ -369,8 +409,8 @@ const T = {
        evname:'V Jornada Internacional de Semántica y Enunciación',
        evdates:'<b>10–12 jun 2026</b> · UNEMAT, Cáceres/MT', evformat:'Formato híbrido',
        evtheme:'“Sujeto, sentido, política e historia en la contemporaneidad”',
-       all:'Todo', lunch:'☀️ Almuerzo', dinner:'🌙 Cena', happy:'🍻 Happy Hour',
-       g_lunch:'☀️ Para el almuerzo', g_dinner:'🌙 Cena & Happy Hour', g_river:'🌊 Junto al río', g_praca:'🏛️ En la Plaza Barão',
+       all:'Todo', lunch:'☀️ Almuerzo', dinner:'🌙 Cena', happy:'🍻 Happy Hour', tour:'🏖️ Turismo',
+       g_lunch:'☀️ Para el almuerzo', g_dinner:'🌙 Cena & Happy Hour', g_river:'🌊 Junto al río', g_praca:'🏛️ En la Plaza Barão', g_tour:'🏖️ Puntos Turísticos',
        go:'Cómo llegar', call:'Llamar', typ:'Cocina típica',
        hours:'Horarios', open:'Abierto ahora', closed:'Cerrado ahora',
        footer:'Organizadores: generen e impriman los códigos QR para pegar en los puntos del evento.',
@@ -416,11 +456,13 @@ function groupsFor(){
   if(filter==='lunch') return [{title:t.g_lunch, items:PLACES.filter(p=>p.cats.includes('lunch'))}];
   if(filter==='dinner') return [{title:t.g_dinner, items:PLACES.filter(p=>p.cats.includes('dinner'))}];
   if(filter==='happy') return [{title:t.happy, items:PLACES.filter(p=>p.cats.includes('happy'))}];
+  if(filter==='tour') return [{title:t.g_tour, items:PLACES.filter(p=>p.cats.includes('tour'))}];
   return [
     {title:t.g_lunch,  items:byId(['todo-dia','juba','juba-center','dito','kaskata','bobs'])},
     {title:t.g_dinner, items:byId(['tutu','juba','todo-dia','juba-center','bobs','louvada','misturella'])},
     {title:t.g_river,  items:byId(['kaskata','prosa'])},
-    {title:t.g_praca,  items:byId(['praca','dito'])}
+    {title:t.g_praca,  items:byId(['praca','dito'])},
+    {title:t.g_tour,   items:byId(['dolina','jacobina','ponta-morro','catedral','daveron'])}
   ];
 }
 function byId(ids){ return ids.map(id=>PLACES.find(p=>p.id===id)).filter(Boolean); }
@@ -481,7 +523,7 @@ function render(){
   document.getElementById('p-mtitle').textContent=t.mtitle;
   document.getElementById('p-mcap').textContent=t.mcap;
 
-  const chips=[['all',t.all],['lunch',t.lunch],['dinner',t.dinner],['happy',t.happy]];
+  const chips=[['all',t.all],['lunch',t.lunch],['dinner',t.dinner],['happy',t.happy],['tour',t.tour]];
   document.getElementById('filters').innerHTML=chips.map(([k,v])=>
     `<button class="chip ${filter===k?'on':''}" data-f="${k}">${v}</button>`).join('');
 

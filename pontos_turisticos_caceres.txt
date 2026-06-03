@@ -1,0 +1,86 @@
+Aqui estão os **5 pontos turísticos mais conhecidos de Cáceres (MT)**, incluindo obrigatoriamente os três locais solicitados com todas as informações de acesso, localização, contato e funcionamento.
+
+---
+
+## 1. Dolina Água Milagrosa (Obrigatório)
+
+Considerada uma das dolinas mais bonitas do Brasil, é um poço profundo cercado por paredões de rocha e vegetação nativa. Suas águas possuem tons que variam entre o azul e o verde-esmeralda, dependendo da época do ano, sendo um local perfeito para flutuação e mergulho.
+
+* **Localização:** Zona Rural de Cáceres (propriedade particular a cerca de 25 km da cidade).
+* **Acesso:** O acesso é feito pela rodovia **MT-343, no Km 12** (sentido Barra do Bugres). A partir do receptivo da fazenda, faz-se uma trilha a pé de aproximadamente 850 metros e a descida de uma escadaria com mais de 150 degraus até o deck da dolina.
+* **Contato:** (65) 99902-8010 (WhatsApp para reservas).
+* **Horário de Funcionamento:** As saídas para a trilha ocorrem em horários específicos mediante agendamento prévio (geralmente às 10h e às 14h). O almoço regional é servido por volta das 12h30.
+
+## 2. Fazenda Jacobina (Obrigatório)
+
+Um casarão histórico tombado pelo Estado que remonta ao período colonial e imperial brasileiro. Hoje, o espaço funciona como um complexo de turismo rural, preservando traços da arquitetura da época (como a antiga senzala e engenhos) e oferecendo uma deliciosa culinária pantaneira.
+
+* **Localização:** BR-070, Zona Rural de Cáceres.
+* **Acesso:** Siga pela rodovia **BR-070 no sentido Cuiabá** por cerca de 22 km a partir do centro urbano de Cáceres. A entrada é bem sinalizada na margem da estrada.
+* **Contato:** (65) 99634-4545 / (65) 99949-4545.
+* **Horário de Funcionamento:** Aberto ao público geral aos **sábados, domingos e feriados**, principalmente para o almoço (sistema de buffet no fogão à lenha das 11h às 15h). O local também recebe eventos e excursões sob agendamento.
+
+## 3. Balneário Ponta do Morro (Obrigatório)
+
+Um excelente refúgio de lazer ecológico junto à natureza. O balneário conta com piscinas de águas naturais e correntes, restaurante self-service de comida caseira, opções de pesque-pague (e pesque-solte), além de trilhas na mata.
+
+* **Localização:** Margens do Córrego Piraputanga, Zona Rural de Cáceres.
+* **Acesso:** Fica situado a cerca de 25 km do centro da cidade. O trajeto combina trechos de asfalto e estrada vicinal de terra em boas condições, rumo à região da comunidade Piraputanga.
+* **Contato:** (65) 99979-3623.
+* **Horário de Funcionamento:** Aberto aos **sábados, domingos e feriados, das 09h às 17h**.
+
+## 4. Catedral de São Luiz de Cáceres
+
+Inspirada na famosa Catedral de Notre-Dame de Paris, esta imponente igreja de estilo gótico-romano é o principal marco histórico, religioso e arquitetônico da cidade. É um ponto de parada obrigatório para fotos no centro urbano.
+
+* **Localização:** Praça Barão do Rio Branco, S/N - Centro Histórico.
+* **Acesso:** Localização urbana e central de facílimo acesso. Pode ser alcançada a pé, de carro ou transporte público a partir de qualquer hotel da cidade.
+* **Contato:** (65) 3223-4443 (Secretaria Paroquial) / (65) 3223-1788 (Diocese).
+* **Horário de Funcionamento:** Aberta diariamente para visitação e missas, geralmente das **07h às 19h** (com variações nos horários das celebrações litúrgicas).
+
+## 5. Praia do Daveron (e Orla do Rio Paraguai)
+
+Uma praia de água doce e areia clara que surge sazonalmente durante o período de seca do Rio Paraguai. É o ponto de encontro urbano preferido dos moradores para se refrescar no calor mato-grossense, praticar esportes e contemplar o pôr do sol no Pantanal.
+
+* **Localização:** Rua Riachuelo, 1475 - Centro (Orla da cidade).
+* **Acesso:** Totalmente pavimentado, localizado no perímetro urbano de Cáceres, na beira do rio.
+* **Contato:** Por ser um espaço público aberto, não possui telefone próprio. Informações gerais podem ser consultadas na Secretaria de Turismo local: (65) 3223-1500.
+* **Horário de Funcionamento:** Espaço público com **acesso livre 24 horas**. A faixa de praia e a estrutura de barracas ficam totalmente disponíveis durante a temporada de estiagem (geralmente entre os meses de julho e outubro).
+
+---
+
+### Resumo dos Atrativos
+
+| Ponto Turístico | Perfil da Atração | Distância do Centro | Exige Agendamento? |
+| --- | --- | --- | --- |
+| **Dolina Água Milagrosa** | Ecoturismo / Mergulho | ~25 km | **Sim** |
+| **Fazenda Jacobina** | Histórico / Almoço Rural | ~22 km | Não (finais de semana) |
+| **Ponta do Morro** | Lazer / Banho de Rio | ~25 km | Não (finais de semana) |
+| **Catedral de São Luiz** | Arquitetura / Cultura | Centro | Não |
+| **Praia do Daveron** | Lazer Urbano / Natureza | Centro | Não |
+
+
+1. Dolina Água Milagrosa
+Formato Decimal (Recomendado): -16.040000, -57.530000
+
+Graus (DMS): 16°02'24.0"S 57°31'48.0"W
+
+2. Fazenda Jacobina
+Formato Decimal (Recomendado): -16.241858, -57.554678
+
+Graus (DMS): 16°14'30.7"S 57°33'16.8"W
+
+3. Balneário Ponta do Morro
+Formato Decimal (Recomendado): -16.140000, -57.540000
+
+Graus (DMS): 16°08'24.0"S 57°32'24.0"W
+
+4. Catedral de São Luiz de Cáceres
+Formato Decimal (Recomendado): -16.065433, -57.687539
+
+Graus (DMS): 16°03'55.6"S 57°41'15.1"W
+
+5. Praia do Daveron (Orla)
+Formato Decimal (Recomendado): -16.061096, -57.689726
+
+Graus (DMS): 16°03'39.9"S 57°41'23.0"W
